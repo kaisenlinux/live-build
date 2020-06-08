@@ -1,0 +1,39 @@
+Source: live-build
+Section: misc
+Priority: optional
+XSBC-Original-Maintainer: Debian Live <debian-live@lists.debian.org>
+Maintainer: Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>
+Uploaders: Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>
+Build-Depends:
+ debhelper-compat (= 12),
+ po4a,
+ gettext,
+Standards-Version: 4.4.1
+Rules-Requires-Root: no
+Homepage: https://wiki.debian.org/DebianLive
+
+Package: live-build
+Architecture: all
+Depends:
+ debootstrap,
+ ${misc:Depends},
+Recommends:
+ apt-utils,
+ bzip2,
+ cpio,
+ file,
+ live-boot-doc,
+ live-config-doc,
+ live-manual-html | live-manual,
+ wget,
+ xz-utils,
+Suggests:
+ e2fsprogs,
+ parted,
+ mtd-utils,
+Description: Live System Build Components
+ The Live Systems project maintains the components to build Debian based Live
+ systems and the official Debian Live images themselves.
+ .
+ live-build contains the components to build a live system from a configuration
+ directory.
