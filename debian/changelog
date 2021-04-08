@@ -1,3 +1,47 @@
+live-build (1:20210407+kaisen1) kaisen-packages; urgency=medium
+
+  * Import new upstream release
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Thu, 08 Apr 2021 23:00:34 +0200
+
+live-build (1:20210407) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Luca Boccassi <bluca@debian.org>  Wed, 07 Apr 2021 18:52:50 +0100
+
+live-build (1:20210405) experimental; urgency=medium
+
+  * Firmware download: skip architecture if not found (Closes: #986278)
+  * Autopkgtest: build a buster image
+  * Autopkgtest: remove architecture restriction
+
+ -- Luca Boccassi <bluca@debian.org>  Mon, 05 Apr 2021 13:04:04 +0100
+
+live-build (1:20210330) unstable; urgency=medium
+
+  * security: do not append /updates for Bullseye and newer.
+    (Closes: #986148)
+
+ -- Luca Boccassi <bluca@debian.org>  Tue, 30 Mar 2021 16:17:38 +0100
+
+live-build (1:20210329) unstable; urgency=medium
+
+  [ Ryan Finnie ]
+  * Use --apt-http-proxy/--apt-ftp-proxy for debootstrap
+  * No mksquashfs progress bar if stdin is not a terminal
+
+  [ Unit 193 ]
+  * firmwarelists.sh: Search Contents-all for firmware too.
+
+  [ Roland Clobus ]
+  * Support security for bullseye. See
+    https://wiki.debian.org/NewInBullseye. Closes: #964914
+  * Fixed handling of checksums in combination with the d-i installer.
+  * Removed filesystem.size for squashfs images.
+
+ -- Luca Boccassi <bluca@debian.org>  Mon, 29 Mar 2021 10:49:43 +0100
+
 live-build (1:20210216+kaisen1) kaisen-packages; urgency=medium
 
   * Import new upstream release
@@ -267,13 +311,13 @@ live-build (1:20210122) unstable; urgency=medium
   [ Steev Klimaszewski ]
   * Add arm64 udeb include files
 
+ -- Raphaël Hertzog <raphael@offensive-security.com>  Fri, 22 Jan 2021 15:13:32 +0100
+
 live-build (1:20191221+kaisen1) kaisen-devel; urgency=medium
 
   * Adding kaisen-rolling distribution at data/debian-cd/
 
  -- Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>  Mon, 18 May 2020 20:16:27 +0200
-
- -- Raphaël Hertzog <raphael@offensive-security.com>  Fri, 22 Jan 2021 15:13:32 +0100
 
 live-build (1:20191221) unstable; urgency=medium
 
