@@ -7,7 +7,7 @@ Build-Depends:
  debhelper-compat (= 13),
  po4a,
  gettext,
-Standards-Version: 4.5.1
+Standards-Version: 4.6.1
 Rules-Requires-Root: no
 Homepage: https://wiki.debian.org/DebianLive
 Vcs-Browser: https://gitlab.com/kaisenlinux/packages/live-build
@@ -22,6 +22,7 @@ Recommends:
  apt-utils,
  bzip2,
  cpio,
+ cryptsetup,
  file,
  live-boot-doc,
  live-config-doc,

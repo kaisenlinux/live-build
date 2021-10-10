@@ -3,20 +3,21 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-BUILD 1 2017\-08\-29 1:20170807kali1 "Projet Debian Live"
+.TH LIVE\-BUILD 1 2021\-09\-02 1:20210902 "Debian Live Project"
 
 .SH NOM
-\fBlb_build\fP \- Complete the bootstrap, chroot, binary, and source stages
+\fBlb_build\fP \- Complete the bootstrap, chroot, installer, binary, and source
+stages
 
 .SH SYNOPSIS
-\fBlb build\fP [\fIlive\-build options\fP]
+\fBlb build\fP [\fIOPTIONS\fP]
 
 .SH DESCRIPTION
-\fBlb build\fP est une commande de haut\-niveau (porcelaine) de
-\fIlive\-build\fP(7), la suite d'outils de live\-systems.
+\fBlb build\fP is a high\-level command (porcelain) of \fIlive\-build\fP(7), the
+Debian Live tool suite.
 .PP
-\fBlb build\fP appelle tous les programmes live\-build nécessaires dans le bon
-ordre pour complèter les stages d'amorçage, de chroot, binaire et source.
+\fBlb build\fP calls all necessary live\-build programs in the correct order to
+complete the bootstrap, chroot, installer, binary, and source stages.
 
 .SH OPTIONS
 \fBlb build\fP n'a pas d'options spécifiques mais fonctionne avec toutes les
@@ -24,10 +25,8 @@ options génériques de live\-build. Voir \fIlive\-build\fP(7) pour une liste
 complète de toutes les options génériques de live\-build options.
 
 .SH FICHIERS
-.\" FIXME
 .IP \fBauto/build\fP 4
 
-.\" FIXME
 .SH "VOIR AUSSI"
 \fIlive\-build\fP(7)
 .PP
@@ -35,14 +34,15 @@ Ce programme est une partie de live\-build.
 
 .SH "PAGE D'ACCUEIL"
 More information about live\-build and the Debian Live project can be found
-on the homepage at <\fIhttps://debian\-live.alioth.debian.org/\fP>.
+on the homepage at <\fIhttps://wiki.debian.org/DebianLive\fP>.
 
 .SH BOGUES
-Les bogues peuvent être signalés en soumettant un rapport de bogue pour le
-paquet live\-build dans le BTS à <\fIhttp://bugs.debian.org/\fP> ou par
-l'écriture d'un courriel à la liste de diffusion Debian Live à
+Bugs can be reported by submitting a bug report for the live\-build package
+in the Bug Tracking System at <\fIhttp://bugs.debian.org/\fP> or by
+writing a mail to the Debian Live mailing list at
 <\fIdebian\-live@lists.debian.org\fP>.
 
 .SH AUTEUR
-live\-images a été écrit par Daniel Baumann
-<\fImail@daniel\-baumann.ch\fP>.
+live\-build was originally written by Daniel Baumann
+<\fImail@daniel\-baumann.ch\fP>. Since 2016 development has been
+continued by the Debian Live team.

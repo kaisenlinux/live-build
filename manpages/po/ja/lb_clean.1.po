@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-build\n"
-"POT-Creation-Date: 2017-08-29 15:05+0200\n"
+"POT-Creation-Date: 2021-09-02 13:56+0100\n"
 "PO-Revision-Date: 2014-08-28 02:52+0900\n"
 "Last-Translator: victory <victory.deb@gmail.com>\n"
 "Language-Team: none\n"
@@ -16,134 +16,142 @@ msgstr ""
 
 #. type: TH
 #: en/lb.1:1 en/lb_binary.1:1 en/lb_bootstrap.1:1 en/lb_build.1:1
-#: en/lb_chroot.1:1 en/lb_clean.1:1 en/lb_config.1:1 en/lb_source.1:1
-#: en/live-build.7:1
+#: en/lb_chroot.1:1 en/lb_clean.1:1 en/lb_config.1:1 en/lb_installer.1:1
+#: en/lb_source.1:1 en/live-build.7:1
 #, no-wrap
 msgid "LIVE-BUILD"
 msgstr "LIVE-BUILD"
 
 #. type: TH
 #: en/lb.1:1 en/lb_binary.1:1 en/lb_bootstrap.1:1 en/lb_build.1:1
-#: en/lb_chroot.1:1 en/lb_clean.1:1 en/lb_config.1:1 en/lb_source.1:1
-#: en/live-build.7:1
+#: en/lb_chroot.1:1 en/lb_clean.1:1 en/lb_config.1:1 en/lb_installer.1:1
+#: en/lb_source.1:1 en/live-build.7:1
 #, no-wrap
-msgid "2017-08-29"
+msgid "2021-09-02"
 msgstr ""
 
 #. type: TH
 #: en/lb.1:1 en/lb_binary.1:1 en/lb_bootstrap.1:1 en/lb_build.1:1
-#: en/lb_chroot.1:1 en/lb_clean.1:1 en/lb_config.1:1 en/lb_source.1:1
-#: en/live-build.7:1
+#: en/lb_chroot.1:1 en/lb_clean.1:1 en/lb_config.1:1 en/lb_installer.1:1
+#: en/lb_source.1:1 en/live-build.7:1
 #, no-wrap
-msgid "1:20170807kali1"
+msgid "1:20210902"
 msgstr ""
 
 #. type: TH
 #: en/lb.1:1 en/lb_binary.1:1 en/lb_bootstrap.1:1 en/lb_build.1:1
-#: en/lb_chroot.1:1 en/lb_clean.1:1 en/lb_config.1:1 en/lb_source.1:1
-#: en/live-build.7:1
-#, no-wrap
-msgid "Live Systems Project"
+#: en/lb_chroot.1:1 en/lb_clean.1:1 en/lb_config.1:1 en/lb_installer.1:1
+#: en/lb_source.1:1 en/live-build.7:1
+#, fuzzy, no-wrap
+#| msgid "Live Systems Project"
+msgid "Debian Live Project"
 msgstr "Live システムプロジェクト"
 
 #. type: SH
 #: en/lb.1:3 en/lb_binary.1:3 en/lb_bootstrap.1:3 en/lb_build.1:3
-#: en/lb_chroot.1:3 en/lb_clean.1:3 en/lb_config.1:3 en/lb_source.1:3
-#: en/live-build.7:3
+#: en/lb_chroot.1:3 en/lb_clean.1:3 en/lb_config.1:3 en/lb_installer.1:3
+#: en/lb_source.1:3 en/live-build.7:3
 #, no-wrap
 msgid "NAME"
 msgstr "名前"
 
 #. type: SH
 #: en/lb.1:6 en/lb_binary.1:6 en/lb_bootstrap.1:6 en/lb_build.1:6
-#: en/lb_chroot.1:6 en/lb_clean.1:6 en/lb_config.1:6 en/lb_source.1:6
-#: en/live-build.7:6
+#: en/lb_chroot.1:6 en/lb_clean.1:6 en/lb_config.1:6 en/lb_installer.1:6
+#: en/lb_source.1:6 en/live-build.7:6
 #, no-wrap
 msgid "SYNOPSIS"
 msgstr "概要"
 
 #. type: SH
 #: en/lb.1:11 en/lb_binary.1:9 en/lb_bootstrap.1:9 en/lb_build.1:9
-#: en/lb_chroot.1:9 en/lb_clean.1:9 en/lb_config.1:229 en/lb_source.1:9
-#: en/live-build.7:11
+#: en/lb_chroot.1:9 en/lb_clean.1:9 en/lb_config.1:235 en/lb_installer.1:9
+#: en/lb_source.1:9 en/live-build.7:11
 #, no-wrap
 msgid "DESCRIPTION"
 msgstr "説明"
 
 #. type: SH
-#: en/lb.1:16 en/lb_binary.1:14 en/lb_bootstrap.1:14 en/lb_build.1:14
-#: en/lb_chroot.1:14 en/lb_clean.1:16 en/lb_config.1:238 en/lb_source.1:14
-#: en/live-build.7:20
+#: en/lb.1:14 en/lb_binary.1:14 en/lb_bootstrap.1:14 en/lb_build.1:14
+#: en/lb_chroot.1:14 en/lb_clean.1:14 en/lb_config.1:242 en/lb_installer.1:14
+#: en/lb_source.1:14 en/live-build.7:18
 #, no-wrap
 msgid "OPTIONS"
 msgstr "オプション"
 
 #. type: SH
-#: en/lb.1:19 en/lb_binary.1:17 en/lb_bootstrap.1:17 en/lb_build.1:17
-#: en/lb_chroot.1:17 en/lb_clean.1:38 en/lb_config.1:474 en/lb_source.1:17
-#: en/live-build.7:229
+#: en/lb.1:17 en/lb_binary.1:17 en/lb_bootstrap.1:17 en/lb_build.1:17
+#: en/lb_chroot.1:17 en/lb_clean.1:34 en/lb_config.1:473 en/lb_installer.1:17
+#: en/lb_source.1:17 en/live-build.7:224
 #, no-wrap
 msgid "FILES"
 msgstr "ファイル"
 
 #. type: SH
-#: en/lb.1:22 en/lb_binary.1:20 en/lb_bootstrap.1:20 en/lb_build.1:22
-#: en/lb_chroot.1:20 en/lb_clean.1:43 en/lb_config.1:481 en/lb_source.1:20
-#: en/live-build.7:233
+#: en/lb.1:20 en/lb_binary.1:20 en/lb_bootstrap.1:20 en/lb_build.1:20
+#: en/lb_chroot.1:20 en/lb_clean.1:37 en/lb_config.1:478 en/lb_installer.1:20
+#: en/lb_source.1:20 en/live-build.7:228
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "関連項目"
 
 #. type: Plain text
-#: en/lb.1:24 en/lb_binary.1:22 en/lb_bootstrap.1:22 en/lb_build.1:24
-#: en/lb_chroot.1:22 en/lb_clean.1:45 en/lb_config.1:483 en/lb_source.1:22
+#: en/lb.1:22 en/lb_binary.1:22 en/lb_bootstrap.1:22 en/lb_build.1:22
+#: en/lb_chroot.1:22 en/lb_clean.1:39 en/lb_config.1:480 en/lb_installer.1:22
+#: en/lb_source.1:22
 msgid "I<live-build>(7)"
 msgstr "I<live-build>(7)"
 
 #. type: Plain text
-#: en/lb.1:26 en/lb_binary.1:24 en/lb_bootstrap.1:24 en/lb_build.1:26
-#: en/lb_chroot.1:24 en/lb_clean.1:47 en/lb_config.1:489 en/lb_source.1:24
-#: en/live-build.7:239
+#: en/lb.1:24 en/lb_binary.1:24 en/lb_bootstrap.1:24 en/lb_build.1:24
+#: en/lb_chroot.1:24 en/lb_clean.1:41 en/lb_config.1:486 en/lb_installer.1:24
+#: en/lb_source.1:24 en/live-build.7:234
 msgid "This program is a part of live-build."
 msgstr "このプログラムは live-build の一部です。"
 
 #. type: SH
-#: en/lb.1:27 en/lb_binary.1:25 en/lb_bootstrap.1:25 en/lb_build.1:27
-#: en/lb_chroot.1:25 en/lb_clean.1:48 en/lb_config.1:490 en/lb_source.1:25
-#: en/live-build.7:240
+#: en/lb.1:25 en/lb_binary.1:25 en/lb_bootstrap.1:25 en/lb_build.1:25
+#: en/lb_chroot.1:25 en/lb_clean.1:42 en/lb_config.1:487 en/lb_installer.1:25
+#: en/lb_source.1:25 en/live-build.7:235
 #, no-wrap
 msgid "HOMEPAGE"
 msgstr "ホームページ"
 
 #. type: Plain text
-#: en/lb.1:29 en/lb_binary.1:27 en/lb_bootstrap.1:27 en/lb_build.1:29
-#: en/lb_chroot.1:27 en/lb_clean.1:50 en/lb_config.1:492 en/lb_source.1:27
-#: en/live-build.7:242
+#: en/lb.1:27 en/lb_binary.1:27 en/lb_bootstrap.1:27 en/lb_build.1:27
+#: en/lb_chroot.1:27 en/lb_clean.1:44 en/lb_config.1:489 en/lb_installer.1:27
+#: en/lb_source.1:27 en/live-build.7:237
 #, fuzzy
 msgid ""
-"More information about live-build and the Live Systems project can be found "
-"on the homepage at E<lt>I<https://debian-live.alioth.debian.org/>E<gt>."
+"More information about live-build and the Debian Live project can be found "
+"on the homepage at E<lt>I<https://wiki.debian.org/DebianLive>E<gt>."
 msgstr ""
 "live-build 及び Live システムプロジェクトについてのさらなる情報は、"
 "E<lt>I<https://debian-live.alioth.debian.org/>E<gt> のホームページや "
 "E<lt>I<http://live-systems.org/manual/>E<gt> のマニュアルにあります。"
 
 #. type: SH
-#: en/lb.1:30 en/lb_binary.1:28 en/lb_bootstrap.1:28 en/lb_build.1:30
-#: en/lb_chroot.1:28 en/lb_clean.1:51 en/lb_config.1:493 en/lb_source.1:28
-#: en/live-build.7:243
+#: en/lb.1:28 en/lb_binary.1:28 en/lb_bootstrap.1:28 en/lb_build.1:28
+#: en/lb_chroot.1:28 en/lb_clean.1:45 en/lb_config.1:490 en/lb_installer.1:28
+#: en/lb_source.1:28 en/live-build.7:238
 #, no-wrap
 msgid "BUGS"
 msgstr "バグ"
 
 #. type: Plain text
-#: en/lb.1:32 en/lb_binary.1:30 en/lb_bootstrap.1:30 en/lb_build.1:32
-#: en/lb_chroot.1:30 en/lb_clean.1:53 en/lb_config.1:495 en/lb_source.1:30
-#: en/live-build.7:245
+#: en/lb.1:30 en/lb_binary.1:30 en/lb_bootstrap.1:30 en/lb_build.1:30
+#: en/lb_chroot.1:30 en/lb_clean.1:47 en/lb_config.1:492 en/lb_installer.1:30
+#: en/lb_source.1:30 en/live-build.7:240
+#, fuzzy
+#| msgid ""
+#| "Bugs can be reported by submitting a bugreport for the live-build package "
+#| "in the Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or by "
+#| "writing a mail to the Live Systems mailing list at E<lt>I<debian-"
+#| "live@lists.debian.org>E<gt>."
 msgid ""
-"Bugs can be reported by submitting a bugreport for the live-build package in "
-"the Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or by "
-"writing a mail to the Live Systems mailing list at E<lt>I<debian-live@lists."
+"Bugs can be reported by submitting a bug report for the live-build package "
+"in the Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or by "
+"writing a mail to the Debian Live mailing list at E<lt>I<debian-live@lists."
 "debian.org>E<gt>."
 msgstr ""
 "バグは E<lt>I<http://bugs.debian.org/>E<gt> にあるバグ追跡システムに live-"
@@ -152,19 +160,25 @@ msgstr ""
 "報告できます。"
 
 #. type: SH
-#: en/lb.1:33 en/lb_binary.1:31 en/lb_bootstrap.1:31 en/lb_build.1:33
-#: en/lb_chroot.1:31 en/lb_clean.1:54 en/lb_config.1:496 en/lb_source.1:31
-#: en/live-build.7:246
+#: en/lb.1:31 en/lb_binary.1:31 en/lb_bootstrap.1:31 en/lb_build.1:31
+#: en/lb_chroot.1:31 en/lb_clean.1:48 en/lb_config.1:493 en/lb_installer.1:31
+#: en/lb_source.1:31 en/live-build.7:241
 #, no-wrap
 msgid "AUTHOR"
 msgstr "作者"
 
 #. type: Plain text
-#: en/lb.1:34 en/lb_binary.1:32 en/lb_bootstrap.1:32 en/lb_build.1:34
-#: en/lb_chroot.1:32 en/lb_clean.1:55 en/lb_config.1:497 en/lb_source.1:32
-#: en/live-build.7:247
+#: en/lb.1:32 en/lb_binary.1:32 en/lb_bootstrap.1:32 en/lb_build.1:32
+#: en/lb_chroot.1:32 en/lb_clean.1:49 en/lb_config.1:494 en/lb_installer.1:32
+#: en/lb_source.1:32 en/live-build.7:242
+#, fuzzy
+#| msgid ""
+#| "live-build was written by Daniel Baumann E<lt>I<mail@daniel-baumann."
+#| "ch>E<gt>."
 msgid ""
-"live-build was written by Daniel Baumann E<lt>I<mail@daniel-baumann.ch>E<gt>."
+"live-build was originally written by Daniel Baumann E<lt>I<mail@daniel-"
+"baumann.ch>E<gt>. Since 2016 development has been continued by the Debian "
+"Live team."
 msgstr ""
 "live-build は Daniel Baumann さん E<lt>I<mail@daniel-baumann.ch>E<gt> により"
 "書かれました。"
@@ -178,22 +192,24 @@ msgstr "B<lb clean> - 設定ディレクトリを掃除します"
 
 #. type: Plain text
 #: en/lb_clean.1:8
-msgid "B<lb clean> [I<live-build options>]"
-msgstr "B<lb clean> [I<live-build オプション>]"
+msgid "B<lb clean> [I<OPTIONS>]"
+msgstr ""
 
 #. type: Plain text
 #: en/lb_clean.1:11
+#, fuzzy
+#| msgid ""
+#| "B<lb clean> is a high-level command (porcelain) of I<live-build>(7), the "
+#| "live systems tool suite."
 msgid ""
 "B<lb clean> is a high-level command (porcelain) of I<live-build>(7), the "
-"live systems tool suite."
+"Debian Live tool suite."
 msgstr ""
 "B<lb clean> は Live システムツール集 I<live-build>(7) の高レベルコマンド "
 "(porcelain) です。"
 
-#.  FIXME
-#.  FIXME
 #. type: Plain text
-#: en/lb_clean.1:15
+#: en/lb_clean.1:13
 msgid ""
 "B<lb clean> is responsible for cleaning up after a system is built. It "
 "removes the build directories, and removes some other files including stage "
@@ -204,7 +220,7 @@ msgstr ""
 "は全て残します。"
 
 #. type: Plain text
-#: en/lb_clean.1:18
+#: en/lb_clean.1:16
 msgid ""
 "In addition to its specific options B<lb clean> understands all generic live-"
 "build options. See I<live-build>(7) for a complete list of all generic live-"
@@ -214,15 +230,14 @@ msgstr ""
 "ます。live-build 全般のオプションの全容については I<live-build>(7) を見てくだ"
 "さい。"
 
-#.  FIXME
 #. type: IP
-#: en/lb_clean.1:20
+#: en/lb_clean.1:17
 #, no-wrap
 msgid "B<--all>"
 msgstr "B<--all>"
 
 #. type: Plain text
-#: en/lb_clean.1:22
+#: en/lb_clean.1:19
 msgid ""
 "removes chroot, binary, stage, and source. The cache directory is kept. This "
 "is the default operation and will be performed if no argument is given."
@@ -231,35 +246,35 @@ msgstr ""
 "リは残します。これはデフォルトの動作で、引数がない場合はこの動作になります。"
 
 #. type: IP
-#: en/lb_clean.1:22
+#: en/lb_clean.1:19
 #, no-wrap
 msgid "B<--cache>"
 msgstr "B<--cache>"
 
 #. type: Plain text
-#: en/lb_clean.1:24
+#: en/lb_clean.1:21
 msgid "removes the cache directories."
 msgstr "キャッシュディレクトリを削除します。"
 
 #. type: IP
-#: en/lb_clean.1:24
+#: en/lb_clean.1:21
 #, no-wrap
 msgid "B<--chroot>"
 msgstr "B<--chroot>"
 
 #. type: Plain text
-#: en/lb_clean.1:26
+#: en/lb_clean.1:23
 msgid "unmounts and removes the chroot directory."
 msgstr "chroot ディレクトリをマウント解除、削除します。"
 
 #. type: IP
-#: en/lb_clean.1:26
+#: en/lb_clean.1:23
 #, no-wrap
 msgid "B<--binary>"
 msgstr "B<--binary>"
 
 #. type: Plain text
-#: en/lb_clean.1:28
+#: en/lb_clean.1:25
 msgid ""
 "removes all binary related caches, files, directories, and stages files."
 msgstr ""
@@ -267,24 +282,24 @@ msgstr ""
 "全て削除します。"
 
 #. type: IP
-#: en/lb_clean.1:28
+#: en/lb_clean.1:25
 #, no-wrap
 msgid "B<--purge>"
 msgstr "B<--purge>"
 
 #. type: Plain text
-#: en/lb_clean.1:30
+#: en/lb_clean.1:27
 msgid "removes everything, including all caches. The config directory is kept."
 msgstr "全キャッシュを含め、全て削除します。設定ディレクトリは残されます。"
 
 #. type: IP
-#: en/lb_clean.1:30
+#: en/lb_clean.1:27
 #, no-wrap
 msgid "B<--remove>"
 msgstr "B<--remove>"
 
 #. type: Plain text
-#: en/lb_clean.1:32
+#: en/lb_clean.1:29
 msgid ""
 "removes everything, including package cache but not stage cache. The config "
 "directory is kept."
@@ -293,33 +308,31 @@ msgstr ""
 "クトリは残されます。"
 
 #. type: IP
-#: en/lb_clean.1:32
+#: en/lb_clean.1:29
 #, no-wrap
 msgid "B<--stage>"
 msgstr "B<--stage>"
 
 #. type: Plain text
-#: en/lb_clean.1:34
+#: en/lb_clean.1:31
 msgid "removes all stage files."
 msgstr "各段階で生成したファイルを全て削除します。"
 
 #. type: IP
-#: en/lb_clean.1:34
+#: en/lb_clean.1:31
 #, no-wrap
 msgid "B<--source>"
 msgstr "B<--source>"
 
-#.  FIXME
 #. type: Plain text
-#: en/lb_clean.1:37
+#: en/lb_clean.1:33
 msgid "removes all source related caches, files, directories, and stage files."
 msgstr ""
 "ソース関連のキャッシュやファイル、ディレクトリ、各段階で生成したファイルを全"
 "て削除します。"
 
-#.  FIXME
 #. type: IP
-#: en/lb_clean.1:40
+#: en/lb_clean.1:35
 #, no-wrap
 msgid "B<auto/clean>"
 msgstr "B<auto/clean>"

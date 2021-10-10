@@ -3,20 +3,17 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-BUILD 7 2017\-08\-29 1:20170807kali1 "Projet Debian Live"
+.TH LIVE\-BUILD 7 2021\-09\-02 1:20210902 "Debian Live Project"
 
 .SH NOM
-\fBlive\-build\fP \- la suite d'outils Debian Live
+\fBlive\-build\fP \- the Debian Live tool suite
 
 .SH SYNOPSIS
-.\" FIXME
-.\" FIXME
-\fBlb \fP\fICOMMAND\fP [\fB\-h|\-\-help\fP] [\fB\-u|\-\-usage\fP] [\fB\-v|\-\-version\fP]
-[\fB\-\-breakpoints\fP] [\fB\-\-conffile\fP] [\fB\-\-debug\fP] [\fB\-\-force\fP] [\fB\-\-quiet\fP]
-[\fB\-\-verbose\fP]
+\fBlb\fP {\fB\-h\fP|\fB\-\-help\fP|\fB\-u\fP|\fB\-\-usage\fP|\fB\-v\fP|\fB\-\-version\fP}
+.PP
+\fBlb\fP \fICOMMAND\fP [\fIOPTIONS\fP]
 
 .SH DESCRIPTION
-.\" FIXME
 live\-build est un ensemble de scripts pour construire des images de système
 live. L'idée derrière live\-build est une suite d'outils qui utilise un
 répertoire de configuration pour automatiser complètement et personnaliser
@@ -24,13 +21,11 @@ tous les aspects de la construction d'une image Live.
 .PP
 La \fICOMMANDE\fP est un nom d'une commande live\-build (voir ci\-dessous).
 .PP
-.\" FIXME
 More documentation about how to use live\-build is available in the
 individual manpages for each helper and in the manual at
-<\fIhttps://debian\-live.alioth.debian.org/manual/\fP>.
+<\fIhttps://live\-team.pages.debian.net/live\-manual/\fP>.
 
 .SH OPTIONS
-.\" FIXME
 .SS "Options live\-build partagées"
 Les options en ligne de commande suivantes sont supportées par l'ensemble
 des programmes live\-build.
@@ -46,35 +41,47 @@ des programmes live\-build. Voir la page de manuel de chaque programme pour
 une explication complète de ce que chaque option fait.
 .IP \fB\-\-breakpoints\fP 4
 lance avec des points d'arrêt (breakpoints).
-.IP \fB\-\-conffile\fP 4
-utilise un fichier de configuration personnalisé.
+.IP \fB\-\-color\fP 4
+enable color use in messages.
 .IP \fB\-\-debug\fP 4
 affiche des informations de déboguage.
 .IP \fB\-\-force\fP 4
 force l'exécution d'un assistant, même si le fichier de stage existe.
+.IP \fB\-\-no\-color\fP 4
+disable color use in messages.
 .IP \fB\-\-quiet\fP 4
 soit discret.
 .IP \fB\-\-verbose\fP 4
-.\" FIXME
 soit verbeux.
 
 .SH "COMMANDES LIVE\-BUILD"
-.\" FIXME
-Nous divisons live\-build entre des commandes de haut\-niveau ("porcelaine")
-et de bas\-niveau ("plomberie").
+We divide live\-build into high level ("porcelain") commands, secondary major
+build stage ("porcelain") commands, and low level ("plumbing") commands.
 .PP
-.\" FIXME
 Voici une liste complète de toutes les commandes live\-build
 disponibles. Consultez leurs pages de manuel pour obtenir de la
 documentation additionnelle.
 
 .SH "COMMANDES HAUT\-NIVEAU (PORCELAINE)"
-.\" FIXME
 Nous séparons les commandes porcelaine en commandes principales et en
 utilitaires utilisateur auxiliaires.
 .SS "Commandes porcelaine principales"
 .IP "\fBlb config\fP(1)" 4
 creates configuration for live\-build
+.IP "\fBlb build\fP(1)" 4
+executes the build process (by executing all of the secondary level major
+build stages in sequence)
+.IP "\fBlb clean\fP(1)" 4
+cleans up system build directories
+.SS "Commandes auxiliaires"
+.IP \fBlb\fP(1) 4
+generic live\-build script execution wrapper
+
+.SH "SECONDARY\-LEVEL BUILD COMMANDS (PORCELAIN)"
+The following are the commands that execute each major stage of the build
+process, in their necessary order of execution. Normally a user might just
+execute the higher level \fBlb build\fP(1) command rather than use these
+individually.
 .IP "\fBlb bootstrap\fP(1)" 4
 executes the first build stage, creating (bootstraping) a basic Debian root
 filesystem
@@ -83,27 +90,18 @@ executes the second build stage, building the live OS filesystem
 .IP "\fBlb installer\fP(1)" 4
 executes the third build stage, obtaining installer components (optional)
 .IP "\fBlb binary\fP(1)" 4
-executes the fourth build stage, generating a binary image
+executes the fourth build stage, generating the binary (live) image
 .IP "\fBlb source\fP(1)" 4
-executes the fifth build stage, generating a source image (optional)
-.IP "\fBlb clean\fP(1)" 4
-cleans up system build directories
-.SS "Commandes auxiliaires"
-.IP \fBlb\fP(1) 4
-generic live\-build script execution wrapper
-.IP "\fBlb build\fP(1)" 4
-.\" FIXME
-alias for all build stages
+executes the fifth build stage, generating a corresponding source image
+(optional)
 
 .SH "LOW\-LEVEL COMMANDS (PLUMBING) \- BUILD STAGE COMPONENTS"
-.\" FIXME
-Le travail réel de live\-build est implémenté dans les commandes bas\-niveau,
-appelées plomberie. Elles ne sont pas supposées être utilisées par les
-utilisateurs finaux, ils devraient rester avec les porcelaines puisqu'elles
-s'assurent que toutes les différentes commandes de plomberie sont exécutées
-dans le bon ordre. Toutefois, si vous prévoyez de ré\-utiliser les commandes
-live\-build dans vos propres scripts, alors les plomberies pourraient vous
-intéresser.
+The actual work of live\-build is implemented in the low\-level commands,
+called plumbing. They are not supposed to be used by end users, who should
+stick with porcelains as they ensure that all the different plumbing
+commands are executed in the right order. However, if you intend to reuse
+live\-build commands in your own scripts, then the plumbings might be of
+interest for you.
 .PP
 Notez que l'interface (ensemble des options et des semantiques) de ces
 commandes bas\-niveau sont pensées pour être beaucoup plus stables que les
@@ -117,7 +115,7 @@ applies apt archive configuration
 in save mode, saves to cache a copy of the generated bootstrap directory,
 and in restore mode, restores from cache a previously generated copy
 .IP "\fBlb bootstrap_debootstrap\fP(1)" 4
-creates (bootstrap) a basic Debian root filesystem using debootstrap(8)
+creates (bootstraps) a basic Debian root filesystem using debootstrap(8)
 .SS "Chroot stage specific commands"
 .PP
 Note: The following chroot_ prefixed commands are used in building the live
@@ -149,9 +147,6 @@ prep modifications applied (see description of these further down)
 .IP "\fBlb chroot_linux\-image\fP(1)" 4
 compiles a list of kernel images to be installed in the live OS root
 filesystem
-.IP "\fBlb chroot_live\-packages\fP(1)" 4
-installs a set of live system specific packages to the live OS root
-filesystem
 .IP "\fBlb chroot_package\-lists\fP(1)" 4
 compiles a list of packages provided in the user\' local config to be
 installed in the live OS root filesystem
@@ -160,32 +155,39 @@ installs pre\-configured answers to certain install prompts into the live OS
 root filesystem
 .SS "Installer stage specific commands"
 .IP "\fBlb installer_debian\-installer\fP(1)" 4
-obtains and sets up Debian installer(d\-i) components
+obtains and sets up Debian installer (d\-i) components
 .IP "\fBlb installer_preseed\fP(1)" 4
 installs pre\-configured answers to certain install prompts
 .SS "Binary stage specific commands"
 .IP "\fBlb binary_checksums\fP(1)" 4
 creates checksums (md5, sha1, and/or sha256) for live image content
 .IP "\fBlb binary_chroot\fP(1)" 4
-duplicates the chroot directory, to place a copy of what whould be the
+duplicates the chroot directory, to place a copy of what would be the
 completed live OS root filesystem to one side, allowing the original to
 continue to be used in executing certain parts of the remainder of the build
 process
 .IP "\fBlb binary_disk\fP(1)" 4
 creates disk information files to be added to live image
-.IP "\fBlb binary_grub\fP(1)" 4
+.IP "\fBlb binary_grub_cfg\fP(1)" 4
+creates the config for grub\-pc and grub\-efi, and also enables loopback
+support (which depends upon it) in the live image
+.IP "\fBlb binary_grub\-efi\fP(1)" 4
+installs grub\-efi (grub2 for EFI) into live image to provide image boot
+capability. It relies upon \fBlb binary_grub_cfg\fP to create the config.
+.IP "\fBlb binary_grub\-legacy\fP(1)" 4
 installs grub into live image to provide image boot capability
-.IP "\fBlb binary_grub2\fP(1)" 4
-installs grub2 into live image to provide image boot capability
+.IP "\fBlb binary_grub\-pc\fP(1)" 4
+installs grub\-pc (grub2 for BIOS) into live image to provide image boot
+capability. It relies upon \fBlb binary_grub_cfg\fP to create the config.
 .IP "\fBlb binary_hdd\fP(1)" 4
-compiles the final live image into an hdd image file
+compiles the final live image into an HDD image file
 .IP "\fBlb binary_hooks\fP(1)" 4
 executes local hooks against the live image, if any are provided
 .IP "\fBlb binary_includes\fP(1)" 4
 copies a set of local files from the config directory into the live image,
 if any are provided
 .IP "\fBlb binary_iso\fP(1)" 4
-compiles the final live image into an iso file
+compiles the final live image into an ISO file
 .IP "\fBlb binary_linux\-image\fP(1)" 4
 copies the linux\-image into the live image
 .IP "\fBlb binary_loadlin\fP(1)" 4
@@ -198,6 +200,8 @@ disk
 bundles a copy of memtest into the live image
 .IP "\fBlb binary_netboot\fP(1)" 4
 compiles the final live image into a netboot tar archive
+.IP "\fBlb binary_onie\fP(1)" 4
+installs onie into the live image
 .IP "\fBlb binary_package\-lists\fP(1)" 4
 processes local lists of packages to obtain and bundle into image (from
 which they could later be installed if not already)
@@ -221,19 +225,17 @@ downloads source packages for bundling into source image
 .IP "\fBlb source_disk\fP(1)" 4
 creates disk information files to be added to source image
 .IP "\fBlb source_hdd\fP(1)" 4
-compiles the final source image into an hdd image file
+compiles the final source image into an HDD image file
 .IP "\fBlb source_hooks\fP(1)" 4
 executes local hooks against the source image, if any are provided
 .IP "\fBlb source_iso\fP(1)" 4
-compiles the final source image into an iso file
+compiles the final source image into an ISO file
 .IP "\fBlb source_live\fP(1)" 4
 copies live\-build config into source
 .IP "\fBlb source_tar\fP(1)" 4
-.\" FIXME
 compiles the final source image into a tar archive
 
 .SH "LOW\-LEVEL COMMANDS (PLUMBING) \- CHROOT PREP COMPONENTS"
-.\" FIXME
 The notes above under the section regarding build\-stage specific low\-level
 plumbing commands also apply here.
 .PP
@@ -244,6 +246,26 @@ setup the chroot for use (execution of programs within it) during the build
 process, and later to remove those modification, unmounting things that were
 mounted, and making the chroot suitable for use as the root filesystem of
 the live OS to be bundled into the live image.
+.PP
+Note that the \fBlb chroot_prep\fP(1) command can be used to run these
+components in bulk.
+.IP "\fBlb chroot_prep\fP(1)" 4
+a helper to run the below components in bulk. The first parameter it takes
+is the execution mode \- install or remove \- to pass along. The second
+parameter is the set of helpers to run (they can be space or comma
+separated; remember to quote if space separated). Following this one or more
+of the special parameters 'mode\-archives\-chroot', 'mode\-archives\-binary',
+\&'mode\-archives\-source' and 'mode\-apt\-install\-binary' can optionally be used,
+to select the 'pass' parameter for \fBlb chroot_archives\fP(1) in the case of
+the first three (required if 'archives' is one of the helpers to be run),
+and to run \fBlb chroot_apt\fP(1) in 'install\-binary' mode in the last
+case. Any remaining parameters (i.e. options like \-\-force) are passed along
+to all scripts run. The second parameter can be simply 'all' in which case a
+default set of all components are used, or 'all\-except\-archives' which
+differs in skipping \fBlb chroot_archives\fP(1). Components can be specified
+without their filename 'chroot_' prefix for brevity. In remove mode the list
+of components are run in reverse order, so no need to provide them in
+reverse order yourself.
 .IP "\fBlb chroot_apt\fP(1)" 4
 manages apt configuration; in apply mode it applies configuration for use
 during build process, and in remove mode removes that configuration
@@ -275,29 +297,14 @@ manages mounting of /sys
 manages the /usr/sbin/policy\-rc.d file
 .IP "\fBlb chroot_tmpfs\fP(1)" 4
 manages configuration of dpkg to use a tmpfs filesystem
-.IP "\fBlb chroot_upstart\fP(1)" 4
-.\" FIXME
-manages use of upstart /sbin/initctl program; in apply mode blocking
-execution through a dpkg diversion, and in remove mode enabling execution
-again
 
 .SH "FICHIERS DE CONFIGURATION"
-.\" FIXME
-Plusieurs commandes live\-build utilisent des fichiers dans le répertoire
-\fIconfig/\fP pour contrôler ce qu'elles font. En plus du \fIconfig/common\fP
-commun, qui est utilisé par toutes les commandes live\-build, plusieurs
-fichiers additionels peuvent être utilisés pour configurer le comportement
-de commandes live\-build spécifiques. Ces fichiers sont typiquement nommés
-config/stage ou config/stage_assistant (où "stage" est évidemment remplacé
-par le nom du stage auquel il appartient, "assistant" par le nom de
-l'assistant).
-.PP
-For example, lb bootstrap_debootstrap uses files named config/bootstrap and
-config/bootstrap_debootstrap to read the options it will use. See the man
-pages of individual commands for details about the names and formats of the
-files they use. Generally, these files contain variables with values
-assigned, one variable per line. Some programs in live\-build use pairs of
-values or slightly more complicated variable assignments.
+Many live\-build commands make use of files in the \fIconfig/\fP directory to
+control what they do. Besides the common \fIconfig/common\fP, which is used by
+all live\-build commands, some additional files can be used to configure the
+behavior of specific live\-build commands. These files are typically named
+config/stage (where "stage" of course, is replaced with the name of the
+stage that they belong to).
 .PP
 Notez que live\-build respectera les variables d'environment présentes dans
 le contexte du shell lancé. Si les variables peuvent être lues depuis les
@@ -307,15 +314,13 @@ sont prioritaires sur les fichiers de configuration. Si pour une variable
 donnée, aucune valeur ne peut être trouvée et donc, est non\-paramétrèe,
 live\-build la paramètrera automatiquement à la valeur par défaut.
 .PP
-Dans de rares cas, vous pourriez vouloir avoir différentes versions de ces
-fichiers pour différentes architectures ou distributions. Si des fichiers
-nommés config/stage.arch ou config/stage_assistant.arch, et
-config/stage.dist ou config/stage_assistant.dist existent, où "arch" est
-équivalent à la sortie de "dpkg \-\-print\-architecture" et "dist" équivalent
-au nom de code de la distribution cible, alors ils seront utilisés en
-priorité aux autres fichier plus généraux.
+In some rare cases, you may want to have different versions of these files
+for different architectures or distributions. If files named
+config/stage.arch and config/stage.dist exist, where "arch" is the same as
+the output of "dpkg \-\-print\-architecture" and "dist" is the same as the
+codename of the target distribution, then they will be used in preference to
+other, more general files.
 .PP
-.\" FIXME
 Tous les fichiers de configuration sont des scripts shell qui sont sourcés
 par un programme live\-build. Ceci signifie qu'ils doivent suivre la syntaxe
 de shell normale. Vous pouvez également mettre des commentaires dans ces
@@ -334,14 +339,15 @@ Ce programme est une partie de live\-build.
 
 .SH "PAGE D'ACCUEIL"
 More information about live\-build and the Debian Live project can be found
-on the homepage at <\fIhttps://debian\-live.alioth.debian.org/\fP>.
+on the homepage at <\fIhttps://wiki.debian.org/DebianLive\fP>.
 
 .SH BOGUES
-Les bogues peuvent être signalés en soumettant un rapport de bogue pour le
-paquet live\-build dans le BTS à <\fIhttp://bugs.debian.org/\fP> ou par
-l'écriture d'un courriel à la liste de diffusion Debian Live à
+Bugs can be reported by submitting a bug report for the live\-build package
+in the Bug Tracking System at <\fIhttp://bugs.debian.org/\fP> or by
+writing a mail to the Debian Live mailing list at
 <\fIdebian\-live@lists.debian.org\fP>.
 
 .SH AUTEUR
-live\-images a été écrit par Daniel Baumann
-<\fImail@daniel\-baumann.ch\fP>.
+live\-build was originally written by Daniel Baumann
+<\fImail@daniel\-baumann.ch\fP>. Since 2016 development has been
+continued by the Debian Live team.
