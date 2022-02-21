@@ -111,7 +111,7 @@ if [ "${LB_BOOTSTRAP_QEMU_ARCHITECTURE}" = "${LB_ARCHITECTURE}" ]; then
 	fi
 
 	Echo_message "Bootstrap will be foreign"
-	debootstrap ${DEBOOTSTRAP_OPTIONS} --include=zsh,bash-completion --foreign "${LB_PARENT_DISTRIBUTION_CHROOT}" chroot "${LB_PARENT_MIRROR_BOOTSTRAP}" ${DEBOOTSTRAP_SCRIPT}
+	debootstrap ${DEBOOTSTRAP_OPTIONS} --foreign "${LB_PARENT_DISTRIBUTION_CHROOT}" chroot "${LB_PARENT_MIRROR_BOOTSTRAP}" ${DEBOOTSTRAP_SCRIPT}
 
 	Echo_message "Running debootstrap second stage under QEMU"
 	cp ${LB_BOOTSTRAP_QEMU_STATIC} chroot/usr/bin
