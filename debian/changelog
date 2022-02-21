@@ -1,8 +1,10 @@
 live-build (1:20210902+kaisen3) kaisen-packages; urgency=medium
 
-  * Added --include=zsh,bash-completion in scripts/build/bootstrap_debootstrap file
+  * Added: DEBOOTSTRAP_OPTIONS="${DEBOOTSTRAP_OPTIONS} --include=zsh,bash-completion"
+    line in scripts/build/bootstrap_debootstrap file
+  * Push on prod
 
- -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Mon, 21 Feb 2022 01:33:12 +0100
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Mon, 21 Feb 2022 03:04:51 +0100
 
 live-build (1:20210902+kaisen2) kaisen-packages; urgency=medium
 

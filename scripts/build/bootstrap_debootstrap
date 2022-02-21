@@ -76,6 +76,9 @@ else
 	DEBOOTSTRAP_OPTIONS="${DEBOOTSTRAP_OPTIONS} --force-check-gpg"
 fi
 
+# Add --include debootstrap argument to include additionals packages
+DEBOOTSTRAP_OPTIONS="${DEBOOTSTRAP_OPTIONS} --include=zsh,bash-completion"
+
 if [ "${LB_CACHE_PACKAGES}" = "true" ]
 then
 	if ls cache/packages.bootstrap/*.deb > /dev/null 2>&1
@@ -86,7 +89,7 @@ then
 
 	Print_breakage
 	Echo_message "Running debootstrap (download-only)..."
-	/usr/bin/env http_proxy="${LB_APT_HTTP_PROXY}" ftp_proxy="${LB_APT_FTP_PROXY}" debootstrap ${DEBOOTSTRAP_OPTIONS} --include=zsh,bash-completion --download-only "${LB_PARENT_DISTRIBUTION_CHROOT}" chroot "${LB_PARENT_MIRROR_BOOTSTRAP}" ${DEBOOTSTRAP_SCRIPT}
+	/usr/bin/env http_proxy="${LB_APT_HTTP_PROXY}" ftp_proxy="${LB_APT_FTP_PROXY}" debootstrap ${DEBOOTSTRAP_OPTIONS} --download-only "${LB_PARENT_DISTRIBUTION_CHROOT}" chroot "${LB_PARENT_MIRROR_BOOTSTRAP}" ${DEBOOTSTRAP_SCRIPT}
 
 	# Removing old cache
 	rm -f cache/packages.bootstrap/*.deb
@@ -108,7 +111,7 @@ if [ "${LB_BOOTSTRAP_QEMU_ARCHITECTURE}" = "${LB_ARCHITECTURE}" ]; then
 	fi
 
 	Echo_message "Bootstrap will be foreign"
-	debootstrap ${DEBOOTSTRAP_OPTIONS} --foreign "${LB_PARENT_DISTRIBUTION_CHROOT}" chroot "${LB_PARENT_MIRROR_BOOTSTRAP}" ${DEBOOTSTRAP_SCRIPT}
+	debootstrap ${DEBOOTSTRAP_OPTIONS} --include=zsh,bash-completion --foreign "${LB_PARENT_DISTRIBUTION_CHROOT}" chroot "${LB_PARENT_MIRROR_BOOTSTRAP}" ${DEBOOTSTRAP_SCRIPT}
 
 	Echo_message "Running debootstrap second stage under QEMU"
 	cp ${LB_BOOTSTRAP_QEMU_STATIC} chroot/usr/bin
