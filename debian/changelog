@@ -1,7 +1,15 @@
+live-build (1:20210902+kaisen3) kaisen-packages; urgency=medium
+
+  * Added --include=zsh,bash-completion in scripts/build/bootstrap_debootstrap file
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Mon, 21 Feb 2022 01:33:12 +0100
+
 live-build (1:20210902+kaisen2) kaisen-packages; urgency=medium
 
   * Fixed persistent live not working. 
-    This bug was due to bad xorriso options in the binary_iso script.
+    This bug was due to bad xorriso options in the binary_iso script. Added line:
+    XORRISO_OPTIONS="${XORRISO_OPTIONS} -append_partition 2 0x01 binary/boot/grub/efi.img"
+    in scripts/build/binary_iso file
 
  -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Thu, 02 Nov 2021 19:47:54 +0100
 
