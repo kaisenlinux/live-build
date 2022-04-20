@@ -76,9 +76,6 @@ else
 	DEBOOTSTRAP_OPTIONS="${DEBOOTSTRAP_OPTIONS} --force-check-gpg"
 fi
 
-# Add --include debootstrap argument to include additionals packages
-DEBOOTSTRAP_OPTIONS="${DEBOOTSTRAP_OPTIONS} --include=zsh,bash-completion"
-
 if [ "${LB_CACHE_PACKAGES}" = "true" ]
 then
 	if ls cache/packages.bootstrap/*.deb > /dev/null 2>&1
