@@ -17,7 +17,6 @@ set -e
 # Setting static variables
 DESCRIPTION="Create configuration for live-build(7)"
 USAGE="${PROGRAM} [--apt apt|apt-get|aptitude]\n\
-\t    [--apt-ftp-proxy URL]\n\
 \t    [--apt-http-proxy URL]\n\
 \t    [--apt-indices true|false]\n\
 \t    [--apt-options OPTION|\"OPTIONS\"]\n\
@@ -135,7 +134,7 @@ Local_arguments ()
 {
 	local LONG_OPTIONS
 	LONG_OPTIONS="
-		apt:,apt-ftp-proxy:,apt-http-proxy:,apt-indices:,aptitude-options:,
+		apt:,apt-http-proxy:,apt-indices:,aptitude-options:,
 		apt-options:,apt-pipeline:,apt-recommends:,apt-secure:,
 		apt-source-archives:,architecture:,architectures:,archive-areas:,
 		backports:,binary-filesystem:,binary-image:,binary-images:,
@@ -282,11 +281,6 @@ Local_arguments ()
 
 			--apt)
 				LB_APT="${2}"
-				shift 2
-				;;
-
-			--apt-ftp-proxy)
-				LB_APT_FTP_PROXY="${2}"
 				shift 2
 				;;
 
@@ -982,10 +976,7 @@ LB_CONFIGURATION_VERSION="${LB_CONFIGURATION_VERSION}"
 # Set package manager
 LB_APT="${LB_APT}"
 
-# Set apt/aptitude/debootstrap ftp proxy
-LB_APT_FTP_PROXY="${LB_APT_FTP_PROXY}"
-
-# Set apt/aptitude/debootstrap http proxy
+# Set proxy for HTTP connections
 LB_APT_HTTP_PROXY="${LB_APT_HTTP_PROXY}"
 
 # Set apt/aptitude pipeline depth
@@ -1227,6 +1218,9 @@ LB_BOOTLOADER_BIOS="${LB_BOOTLOADER_BIOS}"
 # Set EFI bootloader
 LB_BOOTLOADER_EFI="${LB_BOOTLOADER_EFI}"
 
+# Set bootloaders
+LB_BOOTLOADERS="${LB_BOOTLOADERS}"
+
 # Set checksums
 LB_CHECKSUMS="${LB_CHECKSUMS}"
 
@@ -1377,7 +1371,7 @@ if [ ! -e "${LIVE_PKG_LIST}" ]; then
 		NEEDED_PACKAGES="live-boot live-config"
 		case "${LB_INITSYSTEM}" in
 			systemd)
-				NEEDED_PACKAGES="${NEEDED_PACKAGES} live-config-systemd"
+				NEEDED_PACKAGES="${NEEDED_PACKAGES} live-config-systemd systemd-sysv"
 				;;
 
 			sysvinit)

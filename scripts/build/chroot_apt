@@ -41,18 +41,6 @@ case "${_ACTION}" in
 
 		mkdir -p ${CONFD}
 
-		# Configuring apt ftp proxy
-		if [ -n "${LB_APT_FTP_PROXY}" ]
-		then
-			echo "Acquire::ftp::Proxy \"${LB_APT_FTP_PROXY}\";" > ${CONFD}/00ftp-proxy
-		fi
-
-		# Configuring apt http proxy
-		if [ -n "${LB_APT_HTTP_PROXY}" ]
-		then
-			echo "Acquire::http::Proxy \"${LB_APT_HTTP_PROXY}\";" > ${CONFD}/00http-proxy
-		fi
-
 		# Configuring apt pipeline
 		if [ -n "${LB_APT_PIPELINE}" ]
 		then
@@ -155,12 +143,6 @@ case "${_ACTION}" in
 
 		# Acquire lock file
 		Acquire_lockfile
-
-		# Deconfiguring aptitude ftp proxy
-		rm -f ${CONFD}/00ftp-proxy
-
-		# Deconfiguring aptitude http proxy
-		rm -f ${CONFD}/00http-proxy
 
 		# Deconfiguring aptitude pipeline
 		rm -f ${CONFD}/00pipeline
