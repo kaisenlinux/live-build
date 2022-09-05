@@ -1,9 +1,8 @@
 Source: live-build
 Section: misc
 Priority: optional
-Maintainer: Debian Live <debian-live@lists.debian.org>
-Uploaders: Raphaël Hertzog <raphael@offensive-security.com>,
- Luca Boccassi <bluca@debian.org>,
+XSBC-Original-Maintainer: Debian Live <debian-live@lists.debian.org>
+Maintainer: Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>
 Build-Depends:
  debhelper-compat (= 13),
  po4a,
@@ -11,8 +10,8 @@ Build-Depends:
 Standards-Version: 4.6.0
 Rules-Requires-Root: no
 Homepage: https://wiki.debian.org/DebianLive
-Vcs-Browser: https://salsa.debian.org/live-team/live-build
-Vcs-Git: https://salsa.debian.org/live-team/live-build.git
+Vcs-Browser: https://gitlab.com/kaisenlinux/packages/live-build
+Vcs-Git: https://gitlab.com/kaisenlinux/packages/live-build.git
 
 Package: live-build
 Architecture: all

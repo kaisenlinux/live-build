@@ -1,3 +1,10 @@
+live-build (2:20220505-1kaisen) kaisen-packages; urgency=medium
+
+  * Quilt package
+  * Add kaisen quilt patches
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Sun, 04 Sep 2022 20:38:32 +0100
+
 live-build (1:20220505+kaisen1) kaisen-packages; urgency=medium
 
   * Import new upstream release and keep Kaisen patches
