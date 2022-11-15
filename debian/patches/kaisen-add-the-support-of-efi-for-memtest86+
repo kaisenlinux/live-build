@@ -1,0 +1,48 @@
+Author: Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>
+
+--- live-build-20220505.orig/scripts/build/binary_memtest
++++ live-build-20220505/scripts/build/binary_memtest
+@@ -58,7 +58,14 @@ fi
+ # Checking depends
+ case "${LB_MEMTEST}" in
+ 	memtest86+)
+-		Check_package chroot /boot/memtest86+.bin memtest86+
++		if [ "${LB_ARCHITECTURE}" = "amd64" ]; then
++                Check_package chroot /boot/memtest86+x64.bin memtest86+
++                Check_package chroot /boot/memtest86+x64.efi memtest86+
++                fi
++                if [ "${LB_ARCHITECTURE}" = "i386" ]; then
++                Check_package chroot /boot/memtest86+x32.bin memtest86+
++                Check_package chroot /boot/memtest86+x32.efi memtest86+
++                fi
+ 		;;
+ esac
+ 
+@@ -85,11 +92,25 @@ mkdir -p "${DESTDIR}"
+ # Installing memtest
+ case "${LB_BUILD_WITH_CHROOT}" in
+ 	true)
+-		cp -a chroot/boot/${LB_MEMTEST}.bin "${DESTDIR}"/memtest
++		if [ "${LB_ARCHITECTURE}" = "amd64" ]; then
++                cp -a chroot/boot/memtest86+x64.bin "${DESTDIR}"/memtest
++                cp -a chroot/boot/memtest86+x64.efi "${DESTDIR}"/memtest-efi
++                fi
++                if [ "${LB_ARCHITECTURE}" = "i386" ]; then
++                cp -a chroot/boot/memtest86+x32.bin "${DESTDIR}"/memtest
++                cp -a chroot/boot/memtest86+x32.efi "${DESTDIR}"/memtest-efi
++                fi
+ 		;;
+ 
+ 	false)
+-		cp -a /boot/${LB_MEMTEST}.bin "${DESTDIR}"/memtest
++		if [ "${LB_ARCHITECTURE}" = "amd64" ]; then
++                cp -a /boot/memtest86+x64.bin "${DESTDIR}"/memtest
++                cp -a /boot/memtest86+x64.efi "${DESTDIR}"/memtest-efi
++                fi
++                if [ "${LB_ARCHITECTURE}" = "i386" ]; then
++                cp -a /boot/memtest86+x32.bin "${DESTDIR}"/memtest
++                cp -a /boot/memtest86+x32.efi "${DESTDIR}"/memtest-efi
++                fi
+ 		;;
+ esac
+ 

@@ -1,3 +1,10 @@
+live-build (2:20220505-2kaisen) kaisen-packages; urgency=medium
+
+  * Add the patch to drop the support of the memtest binary
+  * Add the patch to add the support of EFI for memtest86+
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Tue, 15 Nov 2022 12:51:41 +0100
+
 live-build (2:20220505-1kaisen) kaisen-packages; urgency=medium
 
   * Quilt package
